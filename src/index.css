@@ -42,17 +42,26 @@ All colors MUST be HSL.
     --input: 210 25% 90%;
     --ring: 195 85% 55%;
 
-    /* Custom wellness colors */
-    --wellness-calm: 195 85% 55%;
-    --wellness-happy: 140 60% 60%;
-    --wellness-neutral: 45 15% 75%;
-    --wellness-sad: 220 40% 65%;
-    --wellness-anxious: 35 85% 65%;
-
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(195 85% 55%), hsl(160 60% 60%));
-    --gradient-calm: linear-gradient(135deg, hsl(210 50% 95%), hsl(195 30% 92%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 15% 97%));
+    /* Enhanced wellness colors with vibrant mood options */
+    --wellness-calm: 260 85% 65%;
+    --wellness-happy: 140 70% 55%;
+    --wellness-neutral: 45 25% 70%;
+    --wellness-sad: 220 50% 60%;
+    --wellness-anxious: 25 85% 65%;
+    
+    /* Vibrant mood colors for check-in */
+    --mood-great: 140 70% 55%;
+    --mood-good: 160 60% 60%;
+    --mood-okay: 45 65% 65%;
+    --mood-low: 220 50% 60%;
+    --mood-anxious: 25 85% 65%;
+    
+    /* Enhanced gradients with violet-to-pink theme */
+    --gradient-primary: linear-gradient(135deg, hsl(260 85% 65%), hsl(320 70% 70%));
+    --gradient-calm: linear-gradient(135deg, hsl(260 50% 95%), hsl(320 30% 95%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(260 15% 97%));
+    --gradient-violet-pink: linear-gradient(135deg, hsl(260 60% 85%), hsl(320 60% 85%));
+    --gradient-audio-glow: linear-gradient(135deg, hsl(260 85% 65%), hsl(280 70% 75%));
 
     --radius: 0.5rem;
 
@@ -135,6 +144,14 @@ All colors MUST be HSL.
     background: var(--gradient-card);
   }
   
+  .gradient-violet-pink {
+    background: var(--gradient-violet-pink);
+  }
+  
+  .gradient-audio-glow {
+    background: var(--gradient-audio-glow);
+  }
+  
   .text-wellness-calm {
     color: hsl(var(--wellness-calm));
   }
@@ -151,12 +168,52 @@ All colors MUST be HSL.
     background-color: hsl(var(--wellness-happy));
   }
   
+  .bg-mood-great {
+    background-color: hsl(var(--mood-great));
+  }
+  
+  .bg-mood-good {
+    background-color: hsl(var(--mood-good));
+  }
+  
+  .bg-mood-okay {
+    background-color: hsl(var(--mood-okay));
+  }
+  
+  .bg-mood-low {
+    background-color: hsl(var(--mood-low));
+  }
+  
+  .bg-mood-anxious {
+    background-color: hsl(var(--mood-anxious));
+  }
+  
   .animate-gentle-float {
     animation: gentle-float 6s ease-in-out infinite;
   }
   
   .animate-pulse-soft {
     animation: pulse-soft 3s ease-in-out infinite;
+  }
+  
+  .animate-bounce-in {
+    animation: bounce-in 0.5s ease-out;
+  }
+  
+  .animate-scale-hover {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .animate-scale-hover:hover {
+    transform: scale(1.05);
+  }
+  
+  .animate-pulse-urgent {
+    animation: pulse-urgent 2s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
   }
 }
 
@@ -168,4 +225,26 @@ All colors MUST be HSL.
 @keyframes pulse-soft {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.8; }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse-urgent {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 hsl(var(--accent) / 0.7);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 0 10px hsl(var(--accent) / 0);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 20px hsl(var(--wellness-calm) / 0.3); }
+  100% { box-shadow: 0 0 40px hsl(var(--wellness-calm) / 0.6); }
 }

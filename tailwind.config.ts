@@ -62,6 +62,13 @@ export default {
           sad: "hsl(var(--wellness-sad))",
           anxious: "hsl(var(--wellness-anxious))",
         },
+        mood: {
+          great: "hsl(var(--mood-great))",
+          good: "hsl(var(--mood-good))",
+          okay: "hsl(var(--mood-okay))",
+          low: "hsl(var(--mood-low))",
+          anxious: "hsl(var(--mood-anxious))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
